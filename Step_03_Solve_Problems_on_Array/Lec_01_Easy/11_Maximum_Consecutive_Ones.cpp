@@ -1,3 +1,5 @@
+// https://leetcode.com/problems/max-consecutive-ones/description/
+
 class Solution {
 public:
     int findMaxConsecutiveOnes(vector<int>& nums) {

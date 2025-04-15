@@ -1,3 +1,5 @@
+// https://www.geeksforgeeks.org/problems/longest-sub-array-with-sum-k0809/1?itm_source=geeksforgeeks&itm_medium=article&itm_campaign=practice_card
+
 class Solution {
   public:
     int longestSubarray(vector<int>& arr, int k) {

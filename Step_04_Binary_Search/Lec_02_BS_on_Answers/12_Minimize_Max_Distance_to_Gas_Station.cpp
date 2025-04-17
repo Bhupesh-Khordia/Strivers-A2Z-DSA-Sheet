@@ -1,6 +1,6 @@
 // https://leetcode.com/problems/minimize-max-distance-to-gas-station/
 
-// Premium neede. Not rich enough to buy it :(
+// Premium needed. Not rich enough to buy it :(
 
 
 // https://www.geeksforgeeks.org/problems/minimize-max-distance-to-gas-station/0

@@ -1,23 +1,24 @@
-// https://www.geeksforgeeks.org/problems/postfix-to-infix-conversion/1
+// https://www.geeksforgeeks.org/problems/prefix-to-postfix-conversion/1
 
 class Solution {
     public:
-      string postToInfix(string exp) {
+      string preToPost(string pre_exp) {
           stack <string> st;
-          int i = 0, n = exp.length();
-          while (i < n) {
+          int n = pre_exp.length();
+          int i = n - 1; 
+          while (i >= 0) {
               if(
-                  (exp[i] >= 'a' && exp[i] <= 'z') || 
-                  (exp[i] >= 'A' && exp[i] <= 'Z') ||
-                  (exp[i] >= '0' && exp[i] <= '9')
+                  (pre_exp[i] >= 'a' && pre_exp[i] <= 'z') || 
+                  (pre_exp[i] >= 'A' && pre_exp[i] <= 'Z') ||
+                  (pre_exp[i] >= '0' && pre_exp[i] <= '9')
               ) {
-                  st.push(string(1, exp[i]));
+                  st.push(string(1, pre_exp[i]));
               } else {
-                  string second = st.top(); st.pop();
                   string first = st.top(); st.pop();
-                  st.push("(" + first + exp[i] + second + ")");
+                  string second = st.top(); st.pop();
+                  st.push(first + second + pre_exp[i]);
               }
-              i++;
+              i--;
           }
           return st.top();
       }

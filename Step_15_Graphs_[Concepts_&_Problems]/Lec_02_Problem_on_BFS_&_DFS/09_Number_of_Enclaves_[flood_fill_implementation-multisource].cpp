@@ -5,7 +5,7 @@ using namespace std;
 
 
 
-// Similar Question already done using DFS, so i will do this using BFS.
+// Similar Question done using DFS, so i will do this using BFS.
 // https://leetcode.com/problems/surrounded-regions/description/ (Striver - Step 15 -> Lec 2 -> Q 8)
 
 class Solution {
@@ -32,9 +32,9 @@ public:
                 grid[0][i] = 0;
             }
 
-            if(grid[m - 1][0] == 1) {
-                q.push({m - 1, 0});
-                grid[m - 1][0] = 0;
+            if(grid[m - 1][i] == 1) {
+                q.push({m - 1, i});
+                grid[m - 1][i] = 0;
             }
         }
 

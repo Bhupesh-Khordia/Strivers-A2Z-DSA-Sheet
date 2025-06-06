@@ -36,7 +36,7 @@ private:
         if(x < 0) return ans;
 
         for(auto i : num) {
-            int mini = min(ans, solver(num, x-i));
+            int mini = min(ans, solverDP(num, x-i, dp));
             if(mini != INT_MAX)
                 ans = min(1 + mini, ans);
         }

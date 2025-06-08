@@ -87,8 +87,26 @@ private:
         
         return next[0];
     }
-    
-    
+
+    // T.C - O(n ^ 2) --> This method (with little modification) is used when we want to print the LIS    
+    int solveSingle(vector<int> &arr, int n) {
+        vector<int> dp(n, 1); // Will store length of LIS ending at each index
+
+        int maxi = 1;
+        for(int i = 0; i < n; i++) {
+            for(int prevIndex = 0; prevIndex < i; prevIndex++) {
+                if(arr[prevIndex] < arr[i]) {
+                    // We can append arr[i] after arr[prevIndex]
+                    dp[i] = max(dp[i], 1 + dp[prevIndex]);
+                }
+            }
+
+            maxi = max(maxi, dp[i]);
+        }
+
+        return maxi;
+    }
+
     // DP With Binary Search Solulu (Best) (TC - O(N * log N), SC -O(N))
     int solveDPWithBS(vector<int> &arr, int n) {
         vector<int> ans;
@@ -130,6 +148,12 @@ public:
         // Space Optimized Solulu
         
         // return solveSO(nums,  n);
+
+
+        // Single array solution (O(n^2)) (Useful if we want to print longest LIS)
+        // https://www.geeksforgeeks.org/problems/printing-longest-increasing-subsequence/1
+
+        // return solveSingle(nums, n);
         
         
         

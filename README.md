@@ -157,7 +157,7 @@ Thanks for stopping by! Happy coding and best of luck with your interviews! 💪
 | Ideal for     | Interview preparation                      |
 | Contribution  | Welcomed                                   |
 
-> Start exploring from `01.Arrays`, and let's conquer DSA together!
+> Start exploring from `01.Basics`, and let's conquer DSA together!
 
 ---
 

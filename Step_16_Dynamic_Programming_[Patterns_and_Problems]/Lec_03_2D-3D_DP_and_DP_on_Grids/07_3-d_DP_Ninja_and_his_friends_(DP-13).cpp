@@ -13,19 +13,17 @@ class Solution {
         
         if(dp[index][robo1][robo2] != -1) return dp[index][robo1][robo2];
         
-        if(robo1 == robo2) return dp[index][robo1][robo2] = grid[index][robo1] + solveDP(grid, n, m, robo1, robo2, index + 1, dp);
+        int chocolates = (robo1 == robo2) ? grid[index][robo1] : grid[index][robo1] + grid[index][robo2];
         
         vector<int> direction = {-1, 0, 1};
-        
-        
         int maxi = INT_MIN;
-        for(int i = 0; i < 3; i++) {
-            for(int j = 0; j < 3; j++) {
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
                 maxi = max(maxi, solveDP(grid, n, m, robo1 + direction[i], robo2 + direction[j], index + 1, dp));
             }
         }
         
-        return dp[index][robo1][robo2] = grid[index][robo1] + grid[index][robo2] + maxi;
+        return dp[index][robo1][robo2] = chocolates + maxi;
     }
   public:
     int solve(int n, int m, vector<vector<int>>& grid) {

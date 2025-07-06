@@ -6,6 +6,7 @@ using namespace std;
 class Solution {
 public:
     int minAddToMakeValid(string s) {
+        /*
         if(s.length() == 0) return 0;
 
         stack <char> st;
@@ -20,6 +21,16 @@ public:
         }
 
         return st.size();
-        
+        */
+
+        int left = 0, right = 0;
+        for (char c : s)
+            if (c == '(')
+                right++;
+            else if (right > 0)
+                right--;
+            else
+                left++;
+        return left + right;
     }
 };

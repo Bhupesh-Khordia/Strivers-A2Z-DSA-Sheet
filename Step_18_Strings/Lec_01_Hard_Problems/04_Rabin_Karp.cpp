@@ -162,10 +162,10 @@ public:
     int repeatedStringMatch(string A, string B) {
         // A - abcd
         // Cases -
-        // 1. B can be prefix -> prefix + n*a + suffix ==> cd(abcd)ab   --> ans = n + 2
-        // 2. B can be prefix -> prefix + n*a ==> cd(abcd)              --> ans = n + 1
-        // 3. B can be prefix -> n*a + suffix ==> (abcd)ab              --> ans = n + 1
-        // 4. B can be prefix -> n*a  ==> (abcd)                        --> ans = n
+        // 1. B can be -> prefix + n*a + suffix ==> cd(abcd)ab   --> ans = n + 2
+        // 2. B can be -> prefix + n*a ==> cd(abcd)              --> ans = n + 1
+        // 3. B can be -> n*a + suffix ==> (abcd)ab              --> ans = n + 1
+        // 4. B can be -> n*a  ==> (abcd)                        --> ans = n
         if(A == B) return 1;
         int count = 1;
         string source = A;

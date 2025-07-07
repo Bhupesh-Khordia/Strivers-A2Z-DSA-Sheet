@@ -4,6 +4,8 @@ using namespace std;
 
 // Z Function returns array which will store max length starting from a index which is a prefix in the string.
 
+// Refer this video for detailed explanation - https://www.youtube.com/watch?v=6mzNnEGimPA
+
 // --------------------------------------------------------------------------------------------------------------------------------
 // Refer this question - https://leetcode.com/problems/minimum-time-to-revert-word-to-initial-state-ii/description/
 // --------------------------------------------------------------------------------------------------------------------------------
@@ -49,7 +51,8 @@ public:
         for (int i = k, n = word.size(); i < n; i += k)
             if (z[i] == n - i)
                 return i / k;
-        return (word.size() + k - 1) / k;
+        return (word.size() + k - 1) / k;  // Ceil value of (word.size() / k)
+        // i.e. remove entire string ans start new string again
     }
 };
 
